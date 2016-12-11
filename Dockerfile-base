@@ -1,0 +1,13 @@
+FROM debian:8
+
+MAINTAINER Ondrej Sika <ondrej@ondrejsika.com>
+
+
+RUN apt-get update --fix-missing && \
+    apt-get install -y curl libtool unzip wget
+
+RUN bash -c 'bash <(curl https://raw.githubusercontent.com/zcash/zcash/master/zcutil/fetch-params.sh)'
+
+COPY bin/zcashd /usr/bin/
+COPY bin/zcash-cli /usr/bin/
+

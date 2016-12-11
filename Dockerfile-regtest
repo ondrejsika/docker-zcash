@@ -1,0 +1,11 @@
+FROM ondrejsika/zcash-base
+
+MAINTAINER Ondrej Sika <ondrej@ondrejsika.com>
+
+COPY regtest.conf /root
+
+EXPOSE 28232
+EXPOSE 28233
+
+ENTRYPOINT zcashd -conf=/root/regtest.conf
+

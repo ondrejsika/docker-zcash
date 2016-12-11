@@ -1,0 +1,11 @@
+FROM ondrejsika/zcash-base
+
+MAINTAINER Ondrej Sika <ondrej@ondrejsika.com>
+
+COPY testnet.conf /root
+
+EXPOSE 18232
+EXPOSE 18233
+
+ENTRYPOINT zcashd -conf=/root/testnet.conf
+

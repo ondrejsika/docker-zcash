@@ -1,0 +1,11 @@
+FROM ondrejsika/zcash-base
+
+MAINTAINER Ondrej Sika <ondrej@ondrejsika.com>
+
+COPY livenet.conf /root/
+
+EXPOSE 8232
+EXPOSE 8233
+
+ENTRYPOINT zcashd -conf=/root/livenet.conf
+
